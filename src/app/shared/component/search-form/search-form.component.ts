@@ -40,7 +40,7 @@ export class SearchFormComponent implements OnInit, OnDestroy  {
   }
 
   ngOnDestroy() {
-    this.$unsub.next();
+    this.$unsub.next(null);
     this.$unsub.complete();
   }
 

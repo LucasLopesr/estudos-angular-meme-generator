@@ -7,7 +7,7 @@ describe('ConfigurationService', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.get(ConfigurationService);
+    service = TestBed.inject(ConfigurationService);
   });
 
   it('should be created', () => {
@@ -15,6 +15,6 @@ describe('ConfigurationService', () => {
   });
 
   it('should return enviroment', () => {
-    expect(service.settings.api).toEqual('http://localhost:3000');
+    expect(service.settings.api).toEqual('http://localhost:3030');
   });
 });

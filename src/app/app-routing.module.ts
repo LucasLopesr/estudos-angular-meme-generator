@@ -2,7 +2,10 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {path: '', loadChildren: './feature/meme-generator/meme-generator.module#MemeGeneratorModule'}
+  {
+    path: '',
+    loadChildren: () => import('./feature/meme-generator/meme-generator.module').then(x => x.MemeGeneratorModule)
+  }
 ];
 
 @NgModule({

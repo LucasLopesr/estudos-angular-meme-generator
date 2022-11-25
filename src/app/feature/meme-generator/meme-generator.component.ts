@@ -22,7 +22,7 @@ export class MemeGeneratorComponent implements OnInit {
   bottomText: string;
   imageSelected: Image;
 
-  constructor(private imageService: ImageService) { }
+  constructor(private readonly imageService: ImageService) { }
 
   ngOnInit() {
   }
@@ -31,7 +31,7 @@ export class MemeGeneratorComponent implements OnInit {
     this.images = this.imageService.getImages(keyword)
       .pipe(
         tap(this.imageSelected = null),
-        finalize(() => this.$searchEnd.next()),
+        finalize(() => this.$searchEnd.next(null)),
         take(1)
       );
   }
